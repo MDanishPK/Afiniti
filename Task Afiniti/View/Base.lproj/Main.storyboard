@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Task_Afiniti" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2T-Sv-gNy">
+                                <rect key="frame" x="139.5" y="787" width="135" height="30"/>
+                                <state key="normal" title="Download 3 Images"/>
+                                <connections>
+                                    <action selector="downloadButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="blf-cP-7jA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GtN-2q-zcz">
+                                <rect key="frame" x="159.5" y="727" width="95" height="30"/>
+                                <state key="normal" title="Upload Image"/>
+                                <connections>
+                                    <action selector="uploadButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nXE-dv-B9I"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="M2T-Sv-gNy" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4j3-ni-CEK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="M2T-Sv-gNy" secondAttribute="bottom" constant="45" id="Yxx-Nb-Xae"/>
+                            <constraint firstItem="GtN-2q-zcz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fVO-Pk-Pyb"/>
+                            <constraint firstItem="M2T-Sv-gNy" firstAttribute="top" secondItem="GtN-2q-zcz" secondAttribute="bottom" constant="30" id="zAN-8x-F6Y"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="54" y="40"/>
+        </scene>
+        <!--Download View Controller-->
+        <scene sceneID="T4h-w2-4PT">
+            <objects>
+                <viewController storyboardIdentifier="DownloadViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="y18-Cf-8jl" customClass="DownloadViewController" customModule="Task_Afiniti" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a5n-55-f4d">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dxz-m5-pbc">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Zj-RS-tlk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dxz-m5-pbc" firstAttribute="leading" secondItem="6Zj-RS-tlk" secondAttribute="leading" id="DMb-zB-fpw"/>
+                            <constraint firstItem="dxz-m5-pbc" firstAttribute="top" secondItem="6Zj-RS-tlk" secondAttribute="top" id="lrY-w7-s5N"/>
+                            <constraint firstItem="6Zj-RS-tlk" firstAttribute="bottom" secondItem="dxz-m5-pbc" secondAttribute="bottom" id="rcE-sv-6Kb"/>
+                            <constraint firstItem="6Zj-RS-tlk" firstAttribute="trailing" secondItem="dxz-m5-pbc" secondAttribute="trailing" id="u44-ze-krr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imagesTableView" destination="dxz-m5-pbc" id="gFT-V3-uIj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WOH-vr-VMv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="897.10144927536237" y="39.508928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
